@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
 from .serializer import SolicitudSerializer
-from .logic.logic_solicitudes import getSolicitudes, createSolicitud, getSolicitudesByUserId
+from .logic.logic_solicitudes import getSolicitudes, createSolicitud, getSolicitudesByUserId, getSolicitudByStatus
 
 @api_view(['GET'])
 def solicitudesList(request):
@@ -23,6 +23,16 @@ def solicitudesListByUserId(request, document):
     if request.method == 'GET':
         try:
             solicitudes = getSolicitudesByUserId(document)
+            serializer = SolicitudSerializer(solicitudes, many = True)
+            return Response(serializer.data)
+        except Exception:
+            return Response({"error": "The Solicitudes wasn't found."}, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET'])
+def solicitudesListByStatus(request, status):
+    if request.method == 'GET':
+        try:
+            solicitudes = getSolicitudByStatus(status)
             serializer = SolicitudSerializer(solicitudes, many = True)
             return Response(serializer.data)
         except Exception:
