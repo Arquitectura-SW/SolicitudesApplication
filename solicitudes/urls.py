@@ -1,8 +1,8 @@
 from django.urls import path
-from django.views.decorators.csrf import csrf_exempt
-from .views import postSolicitud, solicitudesList
+from .views import postSolicitud, solicitudesList, solicitudesListByUserId
 
 urlpatterns = [
     path('solicitudes/', solicitudesList),
-    path('createSolicitud', csrf_exempt(postSolicitud), name = 'createSolicitud'),
+    path('solicitudes/createSolicitud', postSolicitud),
+    path('solicitudes/<int:documento>', solicitudesListByUserId),
 ]
