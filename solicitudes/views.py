@@ -1,7 +1,3 @@
-from django.shortcuts import render
-from django.contrib import messages
-from django.http import HttpResponseRedirect
-from django.urls import reverse
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
@@ -38,7 +34,7 @@ def solicitudesListByStatus(request, status):
         except Exception:
             return Response({"error": "The Solicitudes wasn't found."}, status=status.HTTP_400_BAD_REQUEST)
               
-@api_view(['GET'])
+@api_view(['POST'])
 def postSolicitud(request):
     if request.method == 'POST':
         try:
