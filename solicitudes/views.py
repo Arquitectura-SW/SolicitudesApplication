@@ -32,11 +32,9 @@ def solicitudesListByUserId(request, document):
 @api_view(['GET'])
 def postSolicitud(request):
     if request.method == 'POST':
-        form = solicitudForm(request.POST)
-        if form.is_valid():
-            try:
-                solcitud = createSolicitud(form)
-                serializer = SolicitudSerializer(solcitud)
-                return Response(serializer.data, status=status.HTTP_201_CREATED)
-            except Exception:
-                return Response({"error": "The Solicitudes wasn't created."}, status=status.HTTP_400_BAD_REQUEST)
+        try:
+            solcitud = createSolicitud(request.data)
+            serializer = SolicitudSerializer(solcitud)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        except Exception:
+            return Response({"error": "The Solicitudes wasn't created."}, status=status.HTTP_400_BAD_REQUEST)
