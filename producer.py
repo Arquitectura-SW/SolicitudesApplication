@@ -29,7 +29,7 @@ channel.exchange_declare(exchange=exchange, exchange_type='topic')
 while True:
         for topic in topics:
             for solicitud in solicitudes:
-                payload = {'user_id': solicitud.user.document,'status':solicitud.status, 'creationDate': solicitud.creationDate}
+                payload = {'user_id': solicitud.user.document,'status':solicitud.status, 'creationDate': str(solicitud.creationDate)}
                 message = json.dumps(payload)
                 channel.basic_publish(exchange=exchange, routing_key=topic, body=message)
                 print("Topic: %r Status: %r, UserId: %r, CreationDate: %r" % (topic, solicitud.status, solicitud.user.document, solicitud.creationDate))
