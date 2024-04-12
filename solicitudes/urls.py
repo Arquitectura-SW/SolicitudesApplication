@@ -5,5 +5,5 @@ urlpatterns = [
     path('solicitudes/', solicitudesList),
     path('solicitudes/createSolicitud', postSolicitud),
     path('solicitudes/<int:documento>', solicitudesListByUserId),
-    path('solicitudes/<str: status>', solicitudesListByStatus)
+    path('solicitudes/<str:status>', solicitudesListByStatus)
 ]
