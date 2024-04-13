@@ -27,18 +27,13 @@ channel = connection.channel()
 channel.exchange_declare(exchange=exchange, exchange_type='topic')
 
 def brokerSol(solicitud:Solicitud):
-    print(solicitud)
-    payload = {'user_id': solicitud.user.document,'status':solicitud.status, 'creationDate': str(solicitud.creationDate)}
-    message = json.dumps(payload)
-    print(message)
-    print (payload)
     for topic in topics:
         print(solicitud.creationDate)
         payload = {'user_id': solicitud.user.document,'status':solicitud.status, 'creationDate': str(solicitud.creationDate)}
         message = json.dumps(payload)
-        channel.basic_publish(exchange=exchange, routing_key=topic, body=message)
         print("Topic: %r Status: %r, UserId: %r, CreationDate: %r" % (topic, solicitud.status, solicitud.user.document, solicitud.creationDate))
         time.sleep(1)
+    channel.basic_publish(exchange=exchange, routing_key=topic, body=message)
 connection.close()
         
         
