@@ -44,6 +44,7 @@ def postSolicitud(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         except Exception:
             return Response({"error": "The Solicitudes wasn't created."}, status=status.HTTP_400_BAD_REQUEST)
-        
+
+@api_view(['GET'])      
 def healthCheck(request):
     return HttpResponse('ok')
