@@ -29,8 +29,9 @@ channel.exchange_declare(exchange=exchange, exchange_type='topic')
 def brokerSol(solicitud:Solicitud):
     print(solicitud)
     payload = {'user_id': solicitud.user.document,'status':solicitud.status, 'creationDate': str(solicitud.creationDate)}
+    message = json.dumps(payload)
+    print(message)
     print (payload)
-
     for topic in topics:
         print(solicitud.creationDate)
         payload = {'user_id': solicitud.user.document,'status':solicitud.status, 'creationDate': str(solicitud.creationDate)}
