@@ -41,8 +41,7 @@ def postSolicitud(request):
     if request.method == 'POST':
         try:
             solcitud = createSolicitud(request.data)
-            serializer = SolicitudSerializer(solcitud.data)
-            brokerSol(solcitud)
+            serializer = SolicitudSerializer(solcitud)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         except Exception:
             return Response({"error": "The Solicitudes wasn't created."}, status=status.HTTP_400_BAD_REQUEST)
