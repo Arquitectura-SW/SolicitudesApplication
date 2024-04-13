@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
@@ -43,3 +44,6 @@ def postSolicitud(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         except Exception:
             return Response({"error": "The Solicitudes wasn't created."}, status=status.HTTP_400_BAD_REQUEST)
+        
+def healthCheck(request):
+    return HttpResponse('ok')

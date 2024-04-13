@@ -79,10 +79,10 @@ WSGI_APPLICATION = 'SolicitudesApplication.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'UsersAndSol',
-        'USER': 'monitoring_user',
+        'NAME': 'banco_los_alpes',
+        'USER': 'admin',
         'PASSWORD': 'isis2503',
-        'HOST': '10.63.112.3',
+        'HOST': '10.128.0.51',
         'PORT': '',
     },
 }
