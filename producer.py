@@ -34,7 +34,7 @@ def brokerSol(solicitud:Solicitud):
         channel.basic_publish(exchange=exchange, routing_key=topic, body=message)
         print("Topic: %r Status: %r, UserId: %r, CreationDate: %r" % (topic, solicitud.status, solicitud.user.document, solicitud.creationDate))
         time.sleep(1)
-    connection.close()
+connection.close()
         
         
         
