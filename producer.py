@@ -28,7 +28,7 @@ def brokerSol(solicitud:Solicitud):
 
     for topic in topics:
             print(solicitud.creationDate)
-            payload = {'user_id': solicitud.user.document,'status':solicitud.status, 'creationDate': str(solicitud.creationDate)}
+            payload = {'user_id': solicitud.user,'status':solicitud.status, 'creationDate': str(solicitud.creationDate)}
             message = json.dumps(payload)
             print("Topic: %r Status: %r, UserId: %r, CreationDate: %r" % (topic, solicitud.status, solicitud.user.document, solicitud.creationDate))
             time.sleep(1)
