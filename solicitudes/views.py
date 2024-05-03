@@ -44,8 +44,8 @@ def postSolicitud(request):
             serializer = SolicitudSerializer(solcitud)
             brokerSol(solcitud)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
-        except Exception:
-            return Response({"error": "The Solicitudes wasn't created."}, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as error:
+            return Response({"error": error}, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET'])      
 def healthCheck(request):
