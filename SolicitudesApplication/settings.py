@@ -139,4 +139,4 @@ SOCIAL_AUTH_AUTH0_DOMAIN = 'isis2503trodriten.us.auth0.com'
 SOCIAL_AUTH_AUTH0_KEY = 'qukDwvWR7N4OHN8T9KdcPXdTDUWRn83S' 
 SOCIAL_AUTH_AUTH0_SECRET = '7MVp47TDXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' 
 SOCIAL_AUTH_AUTH0_SCOPE = [ 'openid', 'profile','email','role', ] 
-AUTHENTICATION_BACKENDS = { 'solicitudes.auth0backend.Auth0', 'django.contrib.auth.backends.ModelBackend', }
+AUTHENTICATION_BACKENDS = { 'SolicitudesApplication.auth0backend.Auth0', 'django.contrib.auth.backends.ModelBackend', }
