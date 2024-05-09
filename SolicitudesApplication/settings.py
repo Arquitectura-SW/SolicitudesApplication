@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'solicitudes',
     'rest_framework',
-    'clientes'
+    'clientes',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,13 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = "/login/auth0" 
+LOGIN_REDIRECT_URL = "/" 
+LOGOUT_REDIRECT_URL = "https://isis2503trodriten.us.auth0.com/v2/logout?returnTo=http%3A%2F%2F34.122.81.212:8080" 
+SOCIAL_AUTH_TRAILING_SLASH = False # Remove end slash from routes 
+SOCIAL_AUTH_AUTH0_DOMAIN = 'isis2503trodriten.us.auth0.com' 
+SOCIAL_AUTH_AUTH0_KEY = 'qukDwvWR7N4OHN8T9KdcPXdTDUWRn83S' 
+SOCIAL_AUTH_AUTH0_SECRET = '7MVp47TDXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' 
+SOCIAL_AUTH_AUTH0_SCOPE = [ 'openid', 'profile','email','role', ] 
+AUTHENTICATION_BACKENDS = { 'solicitudes.auth0backend.Auth0', 'django.contrib.auth.backends.ModelBackend', }
