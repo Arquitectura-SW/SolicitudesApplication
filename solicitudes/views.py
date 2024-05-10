@@ -13,7 +13,7 @@ from django.contrib.auth.decorators import login_required
 def solicitudesList(request):
     if request.method == 'GET':
         role = getRole(request)
-        if role == "Gerencia":
+        if role == "":
             try:
                 solicitudes = getSolicitudes()
                 serializer = SolicitudSerializer(solicitudes, many = True)
