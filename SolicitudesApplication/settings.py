@@ -137,6 +137,6 @@ LOGOUT_REDIRECT_URL = "https://isis2503trodriten.us.auth0.com/v2/logout?returnTo
 SOCIAL_AUTH_TRAILING_SLASH = False # Remove end slash from routes 
 SOCIAL_AUTH_AUTH0_DOMAIN = 'isis2503trodriten.us.auth0.com' 
 SOCIAL_AUTH_AUTH0_KEY = 'qukDwvWR7N4OHN8T9KdcPXdTDUWRn83S' 
-SOCIAL_AUTH_AUTH0_SECRET = '7MVp47TDXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' 
+SOCIAL_AUTH_AUTH0_SECRET = 'ZAZh2WA1WSwhUGbViyp0X95hlEA7Boq4Z9a81isVrJn5OYNszKAHRnihI-YH3gdG' 
 SOCIAL_AUTH_AUTH0_SCOPE = [ 'openid', 'profile','email','role', ] 
 AUTHENTICATION_BACKENDS = { 'SolicitudesApplication.auth0backend.Auth0', 'django.contrib.auth.backends.ModelBackend', }
