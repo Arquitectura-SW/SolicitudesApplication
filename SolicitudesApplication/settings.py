@@ -133,7 +133,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = "/login/auth0" 
 LOGIN_REDIRECT_URL = "" 
-LOGOUT_REDIRECT_URL = "https://isis2503trodriten.us.auth0.com/v2/logout?returnTo=https%3A%2F%2Fbancolosalpes.xyz" 
+LOGOUT_REDIRECT_URL = "https://isis2503trodriten.us.auth0.com/v2/logout?returnTo=https%3A%2F%2F34.107.242.117:80" 
 SOCIAL_AUTH_TRAILING_SLASH = False # Remove end slash from routes 
 SOCIAL_AUTH_AUTH0_DOMAIN = 'isis2503trodriten.us.auth0.com' 
 SOCIAL_AUTH_AUTH0_KEY = 'qukDwvWR7N4OHN8T9KdcPXdTDUWRn83S' 
