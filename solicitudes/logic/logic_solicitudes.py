@@ -4,12 +4,16 @@ import requests
 from SolicitudesApplication import settings
 
 def check_user(data):
-    r = requests.get(settings.PATH_USERS, headers={"Accept": "application/json"})
-    response_json = r.json()
-    users = response_json['data'] 
-    for user in users:
-        if data["user"] == user["document"]:
-            return True
+    print(data)
+    r = requests.get(settings.PATH_USERS, headers={"Accept":"application/json"})
+    print(r)
+    users = r.json()
+    print(users)
+    for key, value in users:
+        print(value)
+        for user in value:
+            if data["user"] == user["document"]:
+                return True
     return False
 
 def getSolicitudes():
