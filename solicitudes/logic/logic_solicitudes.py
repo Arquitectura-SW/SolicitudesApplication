@@ -12,6 +12,9 @@ def check_user(data):
     for key, value in users:
         print(value)
         for user in value:
+            print(user)
+            print(data['user'])
+            print(user['document'])
             if data["user"] == user["document"]:
                 return True
     return False
