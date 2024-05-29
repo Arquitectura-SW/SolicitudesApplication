@@ -5,7 +5,7 @@ from rest_framework.decorators import api_view
 from rest_framework import status
 from .serializer import SolicitudSerializer
 from producer import brokerSol
-from .logic.logic_solicitudes import getSolicitudes, createSolicitud, getSolicitudesByUserId, getSolicitudByStatus
+from .logic.logic_solicitudes import getSolicitudes, createSolicitud
 from SolicitudesApplication.auth0backend import getRole
 from django.contrib.auth.decorators import login_required
 
