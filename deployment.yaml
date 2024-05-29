@@ -105,7 +105,7 @@
         boot: true
         autoDelete: true
         initializeParams:
-          sourceImage: https://www.googleapis.com/compute/v1/projects/cos-cloud/global/images/cos-101-17162-463-8
+          sourceImage:  https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20240307b
       networkInterfaces:
       - network: https://www.googleapis.com/compute/v1/projects/isis2503-talleres-415101/global/networks/default
         networkIP: 10.128.0.81
@@ -142,7 +142,7 @@
         boot: true
         autoDelete: true
         initializeParams:
-          sourceImage: https://www.googleapis.com/compute/v1/projects/cos-cloud/global/images/cos-101-17162-463-8
+          sourceImage:  https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20240307b
       networkInterfaces:
       - network: https://www.googleapis.com/compute/v1/projects/isis2503-talleres-415101/global/networks/default
         networkIP: 10.128.0.82
@@ -178,7 +178,7 @@
         boot: true
         autoDelete: true
         initializeParams:
-          sourceImage: https://www.googleapis.com/compute/v1/projects/cos-cloud/global/images/cos-101-17162-463-8
+          sourceImage:  https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20240307b
       networkInterfaces:
       - network: https://www.googleapis.com/compute/v1/projects/isis2503-talleres-415101/global/networks/default
         networkIP: 10.128.0.83
@@ -214,7 +214,7 @@
         boot: true
         autoDelete: true
         initializeParams:
-          sourceImage: https://www.googleapis.com/compute/v1/projects/cos-cloud/global/images/cos-101-17162-463-8
+          sourceImage:  https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20240307b
       networkInterfaces:
       - network: https://www.googleapis.com/compute/v1/projects/isis2503-talleres-415101/global/networks/default
         networkIP: 10.128.0.84
@@ -250,7 +250,7 @@
         boot: true
         autoDelete: true
         initializeParams:
-          sourceImage: https://www.googleapis.com/compute/v1/projects/cos-cloud/global/images/cos-101-17162-463-8
+          sourceImage:  https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20240307b
       networkInterfaces:
       - network: https://www.googleapis.com/compute/v1/projects/isis2503-talleres-415101/global/networks/default
         networkIP: 10.128.0.85
@@ -286,7 +286,7 @@
         boot: true
         autoDelete: true
         initializeParams:
-          sourceImage: https://www.googleapis.com/compute/v1/projects/cos-cloud/global/images/cos-101-17162-463-8
+          sourceImage:  https://www.googleapis.com/compute/v1/projects/ubuntu-os-cloud/global/images/ubuntu-2004-focal-v20240307b
       networkInterfaces:
       - network: https://www.googleapis.com/compute/v1/projects/isis2503-talleres-415101/global/networks/default
         networkIP: 10.128.0.86
