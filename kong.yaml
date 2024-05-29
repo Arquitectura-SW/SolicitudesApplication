@@ -19,7 +19,6 @@ services:
         paths:
           - /solicitudes
           - /solicitudes/createSolicitud
-          - /solicitudes/{documento}
         strip_path: false
     
 upstreams:

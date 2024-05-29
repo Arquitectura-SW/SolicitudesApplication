@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+import requests
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
@@ -8,6 +9,7 @@ from .logic.logic_solicitudes import getSolicitudes, createSolicitud, getSolicit
 from SolicitudesApplication.auth0backend import getRole
 from django.contrib.auth.decorators import login_required
 
+
 @login_required
 @api_view(['GET'])
 def solicitudesList(request):
@@ -16,32 +18,6 @@ def solicitudesList(request):
         if request.method == 'GET':
             try:
                 solicitudes = getSolicitudes()
-                serializer = SolicitudSerializer(solicitudes, many = True)
-                return Response(serializer.data)
-            except Exception:
-                return Response({"error": "The Solicitudes wasn't found."}, status=status.HTTP_400_BAD_REQUEST)
-
-@login_required
-@api_view(['GET'])
-def solicitudesListByUserId(request, document):
-    role = getRole(request)
-    if role == "Gerencia" or role == "Supervisor":
-        if request.method == 'GET':
-            try:
-                solicitudes = getSolicitudesByUserId(document)
-                serializer = SolicitudSerializer(solicitudes, many = True)
-                return Response(serializer.data)
-            except Exception:
-                return Response({"error": "The Solicitudes wasn't found."}, status=status.HTTP_400_BAD_REQUEST)
-
-@login_required
-@api_view(['GET'])
-def solicitudesListByStatus(request, status):
-    role = getRole(request)
-    if role == "Cliente" or role == "Gerencia" or role == "Supervisor":
-        if request.method == 'GET':
-            try:
-                solicitudes = getSolicitudByStatus(status)
                 serializer = SolicitudSerializer(solicitudes, many = True)
                 return Response(serializer.data)
             except Exception:

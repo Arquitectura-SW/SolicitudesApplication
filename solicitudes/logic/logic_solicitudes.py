@@ -1,15 +1,25 @@
+import json
 from solicitudes.models import Solicitud
-from clientes.models import Cliente
+import requests
+from SolicitudesApplication import settings
+
+def check_user(data):
+    r = requests.get(settings.PATH_USERS, headers={"Accept":"application/json"})
+    users = r.json()
+    for user in users:
+        if data["user"] == user["document"]:
+            return True
+    return False
 
 def getSolicitudes():
     return Solicitud.objects.all().order_by('status')
 
 def createSolicitud(data):
     try:
-        user_id = data.get('user')
-        cliente = Cliente.objects.get(document=user_id)
-        data['user'] = cliente
-        return Solicitud.objects.create(**data)
+        data = requests.request.body.decode('utf-8')
+        data_json = json.loads(data)
+        if check_user(data_json):
+            return Solicitud.objects.create(**data)
     except:
         raise Exception({"error": "Client not created"}, 404)
 
@@ -21,15 +31,3 @@ def createSolicitudObject(creationDate, closeDate, status, user):
     solicitud.user = user
     solicitud.save()
         
-def getSolicitudesByUserId(document):
-    try:
-        if Cliente.objects.get(document=document):
-            return Solicitud.objects.filter(user=Cliente.objects.get(document=document))
-    except:
-        raise Exception({'error': 'Cliente no tiene solicitudes'}, 404)
-    
-def getSolicitudByStatus(statu):
-    try:
-        return Solicitud.objects.filter(status=statu)
-    except:
-        raise Exception({"error": "Solicitudes not found"}, 404)

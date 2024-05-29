@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -47,7 +48,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    #'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -80,7 +81,7 @@ WSGI_APPLICATION = 'SolicitudesApplication.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'UsersAndSol',
+        'NAME': 'Sol',
         'USER': 'admin',
         'PASSWORD': 'isis2503',
         'HOST': '172.23.192.7',
@@ -140,3 +141,5 @@ SOCIAL_AUTH_AUTH0_KEY = 'qukDwvWR7N4OHN8T9KdcPXdTDUWRn83S'
 SOCIAL_AUTH_AUTH0_SECRET = 'ZAZh2WA1WSwhUGbViyp0X95hlEA7Boq4Z9a81isVrJn5OYNszKAHRnihI-YH3gdG' 
 SOCIAL_AUTH_AUTH0_SCOPE = [ 'openid', 'profile','email','role', ] 
 AUTHENTICATION_BACKENDS = { 'SolicitudesApplication.auth0backend.Auth0', 'django.contrib.auth.backends.ModelBackend', }
+
+PATH_USERS = "http://" + os.environ.get("USERS_HOST", "10.128.0.86") + ":" + os.environ.get("USERS_PORT", "8080") + "/"
