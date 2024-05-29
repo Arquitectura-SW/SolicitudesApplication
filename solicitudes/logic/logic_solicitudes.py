@@ -6,6 +6,7 @@ from SolicitudesApplication import settings
 def check_user(data):
     r = requests.get(settings.PATH_USERS, headers={"Accept":"application/json"})
     users = r.json()
+    print(users)
     for user in users:
         if data["user"] == user["document"]:
             return True
