@@ -7,7 +7,7 @@ import django
 import json
 from random import choice, randint, uniform
 
-rabbit_host = '10.128.0.53'
+rabbit_host = '10.128.0.14'
 rabbit_user = 'admin'
 rabbit_password = 'admin'
 exchange = 'BancoLosAlpes'

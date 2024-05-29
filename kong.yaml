@@ -29,5 +29,5 @@ upstreams:
 
   - name: solicitudes_upstream
     targets:
-      - target: 10.128.0.85:8080 #Ip balanceador
+      - target: 34.107.242.117:80
         weight: 100
