@@ -1,7 +1,7 @@
 from django.db import models 
 
 class Solicitud(models.Model):
-    user = models.IntegerField(on_delete = models.CASCADE, default = None, null=False)
+    user = models.IntegerField(default = None, null=False)
     creationDate = models.DateTimeField(auto_now_add = True)
     closeDate = models.DateField(null = True, blank= True, default = None)
     status = models.CharField(max_length = 50)
