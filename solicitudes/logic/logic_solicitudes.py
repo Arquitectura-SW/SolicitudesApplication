@@ -9,6 +9,8 @@ def check_user(data):
     print(r)
     users = r.json()
     print(users)
+    print(users['data'])
+    print(users['data'][1])
     for key, value in users:
         print(value)
         for user in value:
