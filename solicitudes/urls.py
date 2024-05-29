@@ -4,5 +4,5 @@ from .views import postSolicitud, solicitudesList, healthCheck
 urlpatterns = [
     path('solicitudes/', solicitudesList),
     path('solicitudes/createSolicitud/', postSolicitud),
-    path('health-check/', healthCheck),
+    path('/health-check/', healthCheck),
 ]
