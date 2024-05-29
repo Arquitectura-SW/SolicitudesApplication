@@ -19,9 +19,7 @@ def getSolicitudes():
 
 def createSolicitud(data):
     try:
-        data = requests.request.body.decode('utf-8')
-        data_json = json.loads(data)
-        if check_user(data_json):
+        if check_user(data):
             return Solicitud.objects.create(**data)
     except:
         raise Exception({"error": "Client not created"}, 404)
