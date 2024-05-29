@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'solicitudes',
     'rest_framework',
-    'clientes',
     'social_django',
 ]
 

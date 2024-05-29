@@ -1,5 +1,4 @@
 from django.db import models 
-from clientes.models import Cliente
 
 class Solicitud(models.Model):
     user = models.IntegerField(on_delete = models.CASCADE, default = None, null=False)
