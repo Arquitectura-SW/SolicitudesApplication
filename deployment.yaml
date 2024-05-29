@@ -131,7 +131,7 @@
             -p 8000:8000 kong/kong-gateway
 
   # Service instances
-  - name: Solicitudes-1
+  - name: solicitudes-1
     type: compute.v1.instance
     properties:
       zone: us-central1-a
@@ -167,7 +167,7 @@
             sudo python3 manage.py makemigrations
             sudo python3 manage.py migrate
 
-  - name: Solicitudes-2
+  - name: solicitudes-2
     type: compute.v1.instance
     properties:
       zone: us-central1-a
@@ -203,7 +203,7 @@
             sudo python3 manage.py makemigrations
             sudo python3 manage.py migrate
 
-  - name: Solicitudes-3
+  - name: solicitudes-3
     type: compute.v1.instance
     properties:
       zone: us-central1-a
@@ -239,7 +239,7 @@
             sudo python3 manage.py makemigrations
             sudo python3 manage.py migrate
 
-  - name: Logs
+  - name: logs
     type: compute.v1.instance
     properties:
       zone: us-central1-a
@@ -275,7 +275,7 @@
             sudo python3 manage.py makemigrations
             sudo python3 manage.py migrate
 
-  - name: Users
+  - name: users
     type: compute.v1.instance
     properties:
       zone: us-central1-a
