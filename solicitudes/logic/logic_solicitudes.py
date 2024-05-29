@@ -10,6 +10,7 @@ def check_user(data):
     users = r.json()
     print(users)
     for user in users:
+        print(user)
         if data["user"] == user["document"]:
             return True
     return False
