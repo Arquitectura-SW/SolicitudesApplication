@@ -141,4 +141,4 @@ SOCIAL_AUTH_AUTH0_SECRET = 'ZAZh2WA1WSwhUGbViyp0X95hlEA7Boq4Z9a81isVrJn5OYNszKAH
 SOCIAL_AUTH_AUTH0_SCOPE = [ 'openid', 'profile','email','role', ] 
 AUTHENTICATION_BACKENDS = { 'SolicitudesApplication.auth0backend.Auth0', 'django.contrib.auth.backends.ModelBackend', }
 
-PATH_USERS = "http://" + os.environ.get("USERS_HOST", "10.128.0.86") + ":" + os.environ.get("USERS_PORT", "8080") + "/"
+PATH_USERS = "http://" + os.environ.get("USERS_HOST", "10.128.0.86") + ":" + os.environ.get("USERS_PORT", "8080") + "/api/v1/clientes/clientes/"
