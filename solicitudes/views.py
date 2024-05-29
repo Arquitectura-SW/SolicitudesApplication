@@ -11,9 +11,9 @@ from django.contrib.auth.decorators import login_required
 @login_required
 @api_view(['GET'])
 def solicitudesList(request):
-    if request.method == 'GET':
-        role = getRole(request)
-        if role == "Gerencia":
+    role = getRole(request)
+    if role == "Gerencia":
+        if request.method == 'GET':
             try:
                 solicitudes = getSolicitudes()
                 serializer = SolicitudSerializer(solicitudes, many = True)
@@ -24,9 +24,9 @@ def solicitudesList(request):
 @login_required
 @api_view(['GET'])
 def solicitudesListByUserId(request, document):
-    if request.method == 'GET':
-        role = getRole(request)
-        if role == "Cliente" or role == "Gerencia" or role == "Supervisor":
+    role = getRole(request)
+    if role == "Gerencia" or role == "Supervisor":
+        if request.method == 'GET':
             try:
                 solicitudes = getSolicitudesByUserId(document)
                 serializer = SolicitudSerializer(solicitudes, many = True)
@@ -37,9 +37,9 @@ def solicitudesListByUserId(request, document):
 @login_required
 @api_view(['GET'])
 def solicitudesListByStatus(request, status):
-    if request.method == 'GET':
-        role = getRole(request)
-        if role == "Cliente" or role == "Gerencia" or role == "Supervisor":
+    role = getRole(request)
+    if role == "Cliente" or role == "Gerencia" or role == "Supervisor":
+        if request.method == 'GET':
             try:
                 solicitudes = getSolicitudByStatus(status)
                 serializer = SolicitudSerializer(solicitudes, many = True)
@@ -50,9 +50,9 @@ def solicitudesListByStatus(request, status):
 @login_required           
 @api_view(['POST'])
 def postSolicitud(request):
-    if request.method == 'POST':
-        role = getRole(request)
-        if role == "Cliente" or role == "Supervisor":
+    role = getRole(request)
+    if role == "Cliente" or role == "Supervisor":
+        if request.method == 'POST':
             try:
                 solcitud = createSolicitud(request.data)
                 serializer = SolicitudSerializer(solcitud)

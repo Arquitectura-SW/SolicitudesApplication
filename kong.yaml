@@ -1,0 +1,34 @@
+_format_version: "2.1"
+
+services:
+  - name: users_service
+    host: users_upstream
+    protocol: http
+    routes:
+      - name: users
+        paths:
+          - /
+          - /{document}
+        strip_path: false
+
+  - name: solicitudes_service
+    host: solicitudes_upstream
+    protocol: http
+    routes:
+      - name: solicitudes
+        paths:
+          - /solicitudes
+          - /solicitudes/createSolicitud
+          - /solicitudes/{documento}
+        strip_path: false
+    
+upstreams:
+  - name: users_upstream
+    targets:
+      - target: 10.128.0.86:8080
+        weight: 100
+
+  - name: solicitudes_upstream
+    targets:
+      - target: 10.128.0.85:8080 #Ip balanceador
+        weight: 100
