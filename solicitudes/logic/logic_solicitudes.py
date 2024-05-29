@@ -4,7 +4,9 @@ import requests
 from SolicitudesApplication import settings
 
 def check_user(data):
+    print(data)
     r = requests.get(settings.PATH_USERS, headers={"Accept":"application/json"})
+    print(r)
     users = r.json()
     print(users)
     for user in users:
