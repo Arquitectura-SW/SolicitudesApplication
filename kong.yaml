@@ -8,6 +8,7 @@ services:
       - name: users
         paths:
           - /api/v1/clientes/clientes
+          - /api/v1/clientes/createCliente
         strip_path: false
 
   - name: solicitudes_service
@@ -24,7 +25,7 @@ services:
 upstreams:
   - name: users_upstream
     targets:
-      - target: 10.128.0.86:8080
+      - target: 34.42.76.163:8080
         weight: 100
 
   - name: solicitudes_upstream
