@@ -17,7 +17,7 @@ environ.setdefault('DJANGO_SETTINGS_MODULE', 'SolicitudesApplication.settings')
 django.setup()
 
 
-def log(document: str, level: str, message: str):
+def log(document: int, level: str, message: str):
     try:
         connection = pika.BlockingConnection(
             pika.ConnectionParameters(host=rabbit_host, credentials=pika.PlainCredentials(rabbit_user, rabbit_password)))

@@ -21,8 +21,6 @@ def solicitudesList(request):
 def postSolicitud(request):
     if request.method == 'POST':
         try:
-            print(request.data)
-            print(request.data['user'])
             createSolicitud(request.data)
             log(document=request.data['user'], level='INFO', message='Solicitud creada exitosamente')
             return Response(status=status.HTTP_201_CREATED)
