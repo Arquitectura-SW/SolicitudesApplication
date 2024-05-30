@@ -31,6 +31,7 @@ def postSolicitud(request):
         if request.method == 'POST':
             try:
                 solcitud = createSolicitud(request.data)
+                print(solcitud)
                 brokerSol(solcitud)
                 return Response(request.data, status=status.HTTP_201_CREATED)
             except Exception as error:
