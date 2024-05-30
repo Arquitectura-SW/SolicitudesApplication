@@ -9,16 +9,13 @@ def check_user(data):
     print(r)
     users = r.json()
     print(users)
-    print(users['data'])
-    print(users['data'][1])
-    for key, value in users:
-        print(value)
-        for user in value:
-            print(user)
-            print(data['user'])
-            print(user['document'])
-            if data["user"] == user["document"]:
-                return True
+
+    for user in users['data']:
+        print(user)
+        print(data['user'])
+        print(user['document'])
+        if data["user"] == user["document"]:
+            return True
     return False
 
 def getSolicitudes():
