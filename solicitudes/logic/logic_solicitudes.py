@@ -4,13 +4,9 @@ import requests
 from SolicitudesApplication import settings
 
 def check_user(data):
-    print(data)
     r = requests.get(settings.PATH_USERS, headers={"Accept":"application/json"})
-    print(r)
     users = r.json()
-    print(users)
     for user in users['data']:
-        print(user)
         if data["user"] == user["document"]:
             return True
     return False
@@ -21,7 +17,9 @@ def getSolicitudes():
 def createSolicitud(data):
     try:
         if check_user(data) == True:
-            return Solicitud.objects.create(**data)
+            sol = Solicitud.objects.create(**data)
+            print(sol)
+            return sol
     except:
         raise Exception({"error": "Client not created"}, 404)
 
