@@ -4,11 +4,10 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
 from .serializer import SolicitudSerializer
-from producer import brokerSol
+from producer import log
 from .logic.logic_solicitudes import getSolicitudes, createSolicitud
 from SolicitudesApplication.auth0backend import getRole
 from django.contrib.auth.decorators import login_required
-
 
 @login_required
 @api_view(['GET'])
@@ -31,7 +30,7 @@ def postSolicitud(request):
         if request.method == 'POST':
             try:
                 solcitud = createSolicitud(request.data)
-                brokerSol(solcitud)
+                log(document=request.data['document'], level='INFO', message='Solicitud creada exitosamente')
                 return Response(status=status.HTTP_201_CREATED)
             except Exception as error:
                 return Response({"error": error}, status=status.HTTP_400_BAD_REQUEST)
