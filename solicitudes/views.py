@@ -21,8 +21,10 @@ def solicitudesList(request):
 def postSolicitud(request):
     if request.method == 'POST':
         try:
+            print(request.data)
+            print(request.data['user'])
             createSolicitud(request.data)
-            log(document=request.data['document'], level='INFO', message='Solicitud creada exitosamente')
+            log(document=request.data['user'], level='INFO', message='Solicitud creada exitosamente')
             return Response(status=status.HTTP_201_CREATED)
         except Exception as error:
             return Response({"error": error}, status=status.HTTP_400_BAD_REQUEST)

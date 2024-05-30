@@ -17,9 +17,7 @@ def getSolicitudes():
 def createSolicitud(data):
     try:
         if check_user(data) == True:
-            sol = Solicitud.objects.create(**data)
-            print(sol)
-            return sol
+            return Solicitud.objects.create(**data)
     except:
         raise Exception({"error": "Client not created"}, 404)
 
