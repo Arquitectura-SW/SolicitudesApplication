@@ -33,7 +33,7 @@ def postSolicitud(request):
                 solcitud = createSolicitud(request.data)
                 print(solcitud)
                 brokerSol(solcitud)
-                return Response(request.data, status=status.HTTP_201_CREATED)
+                return Response(status=status.HTTP_201_CREATED)
             except Exception as error:
                 return Response({"error": error}, status=status.HTTP_400_BAD_REQUEST)
 
