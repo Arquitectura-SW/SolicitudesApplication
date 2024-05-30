@@ -16,8 +16,8 @@ services:
     routes:
       - name: solicitudes
         paths:
-          - /solicitudes
-          - /solicitudes/createSolicitud
+          - /api/solicitudes
+          - /api/solicitudes/createSolicitud
         strip_path: false
     
 upstreams:
