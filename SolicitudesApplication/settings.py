@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'solicitudes',
     'rest_framework',
-    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -130,15 +129,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-LOGIN_URL = "/login/auth0" 
-LOGIN_REDIRECT_URL = "" 
-LOGOUT_REDIRECT_URL = "https://isis2503trodriten.us.auth0.com/v2/logout?returnTo=https%3A%2F%2F34.29.48.100:8080" 
-SOCIAL_AUTH_TRAILING_SLASH = False # Remove end slash from routes 
-SOCIAL_AUTH_AUTH0_DOMAIN = 'isis2503trodriten.us.auth0.com' 
-SOCIAL_AUTH_AUTH0_KEY = 'qukDwvWR7N4OHN8T9KdcPXdTDUWRn83S' 
-SOCIAL_AUTH_AUTH0_SECRET = 'ZAZh2WA1WSwhUGbViyp0X95hlEA7Boq4Z9a81isVrJn5OYNszKAHRnihI-YH3gdG' 
-SOCIAL_AUTH_AUTH0_SCOPE = [ 'openid', 'profile','email','role', ] 
-AUTHENTICATION_BACKENDS = { 'SolicitudesApplication.auth0backend.Auth0', 'django.contrib.auth.backends.ModelBackend', }
 
 PATH_USERS = "http://" + os.environ.get("USERS_HOST", "10.128.0.86") + ":" + os.environ.get("USERS_PORT", "8080") + "/api/v1/clientes/clientes/"
