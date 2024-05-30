@@ -17,7 +17,8 @@ services:
     routes:
       - name: solicitudes
         paths:
-          - /login/auth0
+          - /login/auth0/api/solicitudes
+          - /login/auth0/api/solicitudes/createSolicitud
           - /api/solicitudes
           - /api/solicitudes/createSolicitud
         strip_path: false
