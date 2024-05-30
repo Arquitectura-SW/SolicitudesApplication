@@ -8,7 +8,6 @@ services:
       - name: users
         paths:
           - /api/v1/clientes/clientes
-          - /api/v1/clientes/clientes/{document}
         strip_path: false
 
   - name: solicitudes_service
